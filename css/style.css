@@ -231,10 +231,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- 通用内容页版式 ---------- */
 .page-hero {
-  position: relative; padding: 92px 0 64px; text-align: center;
+  position: relative; padding: 104px 0 72px; text-align: center; overflow: hidden;
   background: linear-gradient(160deg, #fbf9f3, #f1e9d8);
   border-bottom: 1px solid var(--line-soft);
 }
+.page-hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+  opacity: 0.16;
+  -webkit-mask-image: radial-gradient(circle at 50% 28%, #000 0%, transparent 72%);
+          mask-image: radial-gradient(circle at 50% 28%, #000 0%, transparent 72%);
+}
+.page-hero .container { position: relative; z-index: 1; }
 .page-hero .kicker { font-family: var(--serif); color: var(--gold); letter-spacing: 0.4em; font-size: 0.82rem; }
 .page-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); margin: 14px 0 10px; }
 .page-hero p { color: var(--ink-soft); max-width: 640px; margin: 0 auto; }
