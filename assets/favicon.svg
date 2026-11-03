@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#c08a2d"/>
+  <g fill="#fbf9f3">
+    <!-- 五瓣花 -->
+    <g transform="translate(32 32)">
+      <g>
+        <ellipse cx="0" cy="-15" rx="7" ry="12"/>
+        <ellipse cx="0" cy="-15" rx="7" ry="12" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-15" rx="7" ry="12" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-15" rx="7" ry="12" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-15" rx="7" ry="12" transform="rotate(288)"/>
+      </g>
+      <circle r="6" fill="#c08a2d"/>
+      <g fill="#c08a2d">
+        <circle cx="0" cy="-3" r="1.6"/>
+        <circle cx="2.8" cy="1" r="1.6"/>
+        <circle cx="-2.8" cy="1" r="1.6"/>
+      </g>
+    </g>
+  </g>
+</svg>
