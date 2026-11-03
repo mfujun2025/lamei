@@ -429,3 +429,70 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   腊梅专题页 (lamei.html) 专属样式
+   ========================================================= */
+.article-hero {
+  position: relative; padding: 98px 0 60px; text-align: center; overflow: hidden;
+  background: linear-gradient(160deg, #fbf9f3 0%, #f3ecdd 60%, #efe6d2 100%);
+  border-bottom: 1px solid var(--line-soft);
+}
+.article-hero .kicker {
+  display: inline-block; font-family: var(--serif); color: var(--gold);
+  letter-spacing: 0.4em; font-size: 0.82rem; margin-bottom: 14px; padding-left: 0.4em;
+}
+.article-hero h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); margin: 0 0 14px; line-height: 1.25; }
+.article-hero p { color: var(--ink-soft); max-width: 640px; margin: 0 auto; }
+
+.article { max-width: 860px; margin: 0 auto; }
+.article .lead { font-size: 1.06rem; color: var(--ink-soft); }
+.article .lead p { margin-bottom: 0.9em; }
+
+/* 目录 */
+.toc {
+  background: var(--paper-soft); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px 26px; margin: 34px 0 10px;
+  box-shadow: var(--shadow-sm);
+}
+.toc h2 { font-size: 1.05rem; margin: 0 0 12px; font-family: var(--serif); }
+.toc ol { margin: 0; padding-left: 1.3em; columns: 2; column-gap: 30px; }
+.toc li { margin-bottom: 8px; }
+.toc a { color: var(--ink-soft); }
+.toc a:hover { color: var(--gold); }
+
+.article h2 {
+  font-size: clamp(1.45rem, 3vw, 1.95rem); margin: 46px 0 16px;
+  padding-top: 14px; border-top: 1px solid var(--line-soft); scroll-margin-top: 84px;
+}
+.article h2 .num { color: var(--gold-soft); margin-right: 6px; }
+.article h3 { font-size: 1.22rem; margin: 30px 0 10px; color: var(--gold); }
+.article p { color: var(--ink-soft); }
+.article ul, .article ol { color: var(--ink-soft); }
+
+.article .figure { margin: 26px 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.article .figure img { width: 100%; display: block; }
+.article .figure figcaption { padding: 10px 14px; font-size: 0.88rem; color: var(--gold); background: var(--paper-soft); font-family: var(--serif); }
+
+.article .keypoints { background: rgba(192,138,45,0.06); border: 1px solid var(--gold-soft); border-radius: var(--radius); padding: 20px 24px; margin: 28px 0; }
+.article .keypoints h3 { margin: 0 0 10px; color: var(--gold); font-size: 1.05rem; }
+.article .keypoints ul { margin-bottom: 0; }
+
+.article .warn { background: #fdf3ef; border: 1px solid #e7b9a6; border-left: 4px solid #c0583a; border-radius: var(--radius); padding: 14px 18px; margin: 22px 0; color: #7a3b28; font-size: 0.96rem; }
+
+.article table { width: 100%; border-collapse: collapse; margin: 22px 0; background: var(--paper-soft); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); font-size: 0.94rem; }
+.article th, .article td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.article th { background: var(--gold); color: #fff; font-weight: 600; }
+.article tbody tr:nth-child(even) { background: rgba(192,138,45,0.05); }
+
+.faq-item { background: var(--paper-soft); border: 1px solid var(--line); border-left: 4px solid var(--gold-soft); border-radius: var(--radius); padding: 18px 22px; margin: 14px 0; scroll-margin-top: 84px; }
+.faq-item h3 { margin: 0 0 8px; font-size: 1.08rem; color: var(--ink); }
+.faq-item p { margin: 0; }
+
+.article .byline { font-size: 0.88rem; color: var(--ink-faint); margin-top: 30px; }
+.article .ending h2 { border-top: none; }
+
+@media (max-width: 720px) {
+  .toc ol { columns: 1; }
+  .article-hero { padding: 78px 0 44px; }
+}
