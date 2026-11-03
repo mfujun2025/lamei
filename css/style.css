@@ -360,8 +360,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ---------- 滚动渐显动画 ---------- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-.reveal.is-visible { opacity: 1; transform: none; }
+/* 渐进增强：仅当 JS 启用（<html class="js">）才隐藏，JS 禁用时内容始终可见，避免“空白页” */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ---------- 灯箱 ---------- */
 .lightbox {
@@ -427,7 +428,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* 尊重「减少动效」偏好 */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- 首页专题推荐横幅 ---------- */
+.topic-banner { background: linear-gradient(135deg, #fbf6ea, #f3e7c9); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.topic-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.topic-banner__text { max-width: 740px; text-align: left; }
+.topic-banner__text h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 8px 0 10px; }
+.topic-banner__text p { color: var(--ink-soft); margin: 0; }
+.topic-banner .btn { white-space: nowrap; }
+@media (max-width: 640px) {
+  .topic-banner__inner { flex-direction: column; align-items: flex-start; }
 }
 
 /* =========================================================

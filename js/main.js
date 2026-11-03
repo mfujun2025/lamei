@@ -44,7 +44,7 @@
           io.unobserve(entry.target); // 只触发一次
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
 
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
