@@ -276,20 +276,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .fact .num { font-family: var(--serif); font-size: 2rem; color: var(--gold); line-height: 1; }
 .fact .label { display: block; margin-top: 8px; color: var(--ink-soft); font-size: 0.9rem; }
 
-/* 步骤（养护） */
-.steps { counter-reset: step; display: grid; gap: 18px; }
+/* 步骤（养护）—— 双栏紧凑卡片，编号与正文对齐 */
+.steps { counter-reset: step; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .step {
-  display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;
+  display: grid; grid-template-columns: 42px 1fr; column-gap: 16px; row-gap: 4px; align-items: start;
   background: var(--paper-soft); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 22px 24px; box-shadow: var(--shadow-sm);
+  padding: 18px 20px; box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
 }
+.step:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--gold-soft); }
 .step::before {
   counter-increment: step; content: counter(step);
-  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--gold); color: #fff; font-family: var(--serif); font-size: 1.4rem; font-weight: 700;
+  grid-column: 1; grid-row: 1 / -1; align-self: start;
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--gold); color: #fff; font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
 }
-.step h3 { margin: 4px 0 6px; font-size: 1.15rem; }
-.step p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
+.step h3 { grid-column: 2; margin: 2px 0 4px; font-size: 1.08rem; }
+.step p { grid-column: 2; margin: 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.72; }
 
 /* 诗词列表 */
 .poem-list { display: grid; gap: 22px; }
@@ -417,6 +420,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .gallery-preview { grid-template-columns: repeat(2, 1fr); }
   .facts { grid-template-columns: 1fr 1fr; }
   .symbol-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
   .footer-bottom { flex-direction: column; }
