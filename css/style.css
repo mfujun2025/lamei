@@ -361,6 +361,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-friends { margin-top: 30px; font-size: 0.9rem; color: #a89e8d; }
 .footer-friends a { color: #d8cfc0; }
 .footer-friends a:hover { color: var(--gold-soft); }
+
+/* 友情链接横带（首页） */
+.friends-band { padding: 20px 0; background: var(--paper-deep); border-top: 1px solid var(--line-soft); }
+.friends-band .container { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.92rem; color: var(--ink-faint); }
+.friends-band .friends-label { font-family: var(--serif); letter-spacing: 0.3em; color: var(--ink-soft); }
+.friends-band a { color: var(--ink-soft); }
+.friends-band a:hover { color: var(--gold); }
 .footer-bottom {
   margin-top: 38px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.10);
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
